@@ -89,7 +89,7 @@ async def list_take_orders(id):
 
 
 async def list_take(data, id):
-    """"  Функция получения информации о конкретном заказу пользователя """
+    """"  Функция получения информации о конкретном заказe пользователя """
     with sqlite3.connect('basket.db') as connect:
         cursor = connect.cursor()
         data.replace(' ', 'T')
