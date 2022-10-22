@@ -139,7 +139,7 @@ async def callbacks_num(call: CallbackQuery):
 
 
 async def update_num_text(message: Message, new_value: int):
-    """"   Функция обнавления сообщения """
+    """"   Функция обновления сообщения """
     with suppress(MessageNotModified):
         if new_value < 1:
             new_value = 1
@@ -234,7 +234,7 @@ async def orders_list(message: Message):
 
 @dp.callback_query_handler(text_contains='40t')
 async def take_order(call: CallbackQuery):
-    """"   Функция для добавления в карзину выбранного заказа   """
+    """"   Функция для добавления в корзину выбранного заказа   """
     global info
     s = str(call['data'].replace('40t', ''))
     l = await list_take_orders(info[0])
@@ -307,7 +307,7 @@ async def basket_cleaning(list1):
 
 @dp.message_handler(Text(equals=['shopingbasket']))
 async def info_admin(message: Message):
-    """ Функция информации для администратора """
+    """ Функция получения информации для администратора """
     print(info, type(info))
 
 
